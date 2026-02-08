@@ -1,0 +1,16 @@
+{
+    email {$ACME_EMAIL}
+}
+
+{$CADDY_DOMAIN} {
+    respond "OK"
+
+    tls {
+        dns ovh {
+            endpoint {$OVH_ENDPOINT}
+            application_key {$OVH_APPLICATION_KEY}
+            application_secret {$OVH_APPLICATION_SECRET}
+            consumer_key {$OVH_CONSUMER_KEY}
+        }
+    }
+}
